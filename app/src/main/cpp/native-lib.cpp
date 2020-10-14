@@ -8,11 +8,6 @@ extern "C" {
     int unpaper_execute(int argc, char *argv[]);
 };
 
-int c_unpaper_execute(int argc, char *argv[]){
-    return unpaper_execute(argc,argv);
-}
-
-
 extern "C" JNIEXPORT jint JNICALL Java_com_minhdv_androidunpaper2_MobileUnpaper_nativeUnpaperExecute(JNIEnv* env, jobject, jobjectArray stringArray) {
     jstring *tempArray = NULL;
     int argumentCount = 1;
@@ -40,7 +35,7 @@ extern "C" JNIEXPORT jint JNICALL Java_com_minhdv_androidunpaper2_MobileUnpaper_
     }
 
     // RUN
-    int retCode = c_unpaper_execute(argumentCount, argv);
+    int retCode = unpaper_execute(argumentCount, argv);
 
     // CLEANUP
     if (tempArray != NULL) {

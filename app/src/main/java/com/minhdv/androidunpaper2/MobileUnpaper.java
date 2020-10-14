@@ -7,9 +7,9 @@ public class MobileUnpaper {
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
-        System.loadLibrary("avformat");
-        System.loadLibrary("avcodec");
-        System.loadLibrary("avutil");
+        System.loadLibrary("avformat-57");
+        System.loadLibrary("avcodec-57");
+        System.loadLibrary("avutil-55");
     }
     public native int nativeUnpaperExecute(final String[] arguments);
 

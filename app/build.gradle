@@ -38,10 +38,28 @@ android {
             jniLibs.srcDirs = ['src/main/cpp/ffmpeg/lib']
         }
     }
+    packagingOptions {
+        pickFirst 'lib/arm64-v8a/libavcodec-57.so'
+        pickFirst 'lib/arm64-v8a/libavformat-57.so'
+        pickFirst 'lib/arm64-v8a/libavutil-55.so'
+        pickFirst 'lib/x86/libavcodec-57.so'
+        pickFirst 'lib/x86/libavformat-57.so'
+        pickFirst 'lib/x86/libavutil-55.so'
+        pickFirst 'lib/armeabi/libavcodec-57.so'
+        pickFirst 'lib/armeabi/libavformat-57.so'
+        pickFirst 'lib/armeabi/libavutil-55.so'
+        pickFirst 'lib/armeabi-v7a/libavcodec-57.so'
+        pickFirst 'lib/armeabi-v7a/libavformat-57.so'
+        pickFirst 'lib/armeabi-v7a/libavutil-55.so'
+        pickFirst 'lib/x86_64/libavcodec-57.so'
+        pickFirst 'lib/x86_64/libavformat-57.so'
+        pickFirst 'lib/x86_64/libavutil-55.so'
+    }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation 'com.github.dhaval2404:imagepicker:1.7.5'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'

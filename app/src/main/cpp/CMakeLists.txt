@@ -17,7 +17,13 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             native-lib.cpp )
+             native-lib.cpp
+            unpaper-lib/unpaper.c
+            unpaper-lib/tools.c
+            unpaper-lib/parse.c
+            unpaper-lib/imageprocess.c
+            unpaper-lib/file.c
+        )
 
 find_library( # Defines the name of the path variable that stores the
         # location of the NDK library.
